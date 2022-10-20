@@ -6,6 +6,8 @@ package com.example.demo.controller;
 
 import com.example.demo.Dao.ClienteDao;
 import com.example.demo.dominio.Cliente;
+import com.example.demo.services.ClienteService;
+import com.example.demo.services.ClienteServiceImp;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController 
 {
     @Autowired
-    private ClienteDao clienteDao;
+    private ClienteService clienteService;
 
     @GetMapping("/")
     
@@ -31,7 +33,7 @@ public class IndexController
         
         var clientes=Arrays.asList(cliente,cliente2);
         */
-        var  clientes=clienteDao.findAll();
+        var  clientes=clienteService.getClientes();
         
         model.addAttribute("clientes",clientes);
         
