@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      >
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        
+        <div>TechShop</div>
+        <p th:text="${saludo}" >Datos</p>
+        <a th:href="@{/articulo/nuevo}">Nuevo articulo</a>
+        <p>[[${saludo}]]</p>
+        
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>descripcion</th>
+                    <th>detalle</th>
+                    <th>precio</th>
+                    <th>existencias</th>
+                    <th>activo</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="articulo:${articulos}">
+                    <td>[[${articulo.descripcion}]]</td>
+                    <td>[[${articulo.detalle}]]</td>
+                    <td>[[${articulo.precio}]]</td>
+                    <td>[[${articulo.existencias}]]</td>
+                     <td>[[${articulo.activo}]]</td>
+                    <td> <a th:href="@{/articulo/actualiza/} + ${articulo.id_articulo}">Actualizar</td>
+                    <td> <a th:href="@{/articulo/eliminar/} + ${articulo.id_articulo}">Eliminar</td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+
+    </body>
+</html>

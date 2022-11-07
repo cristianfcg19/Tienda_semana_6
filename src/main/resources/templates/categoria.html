@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      >
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        
+        <div>TechShop</div>
+        <p th:text="${saludo}" >Datos</p>
+        <a th:href="@{/categoria/nuevo}">Nuevo Categoria</a>
+        <p>[[${saludo}]]</p>
+        
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>id_categoria</th>
+                    <th>descripcion</th>
+                    <th>activo</th>
+                    <th>actualizar</th>
+                    <th>eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="categoria:${categorias}">
+                    <td>[[${categoria.id_categoria}]]</td>
+                    <td>[[${categoria.descripcion}]]</td>
+                    <td>[[${categoria.activo}]]</td>
+              
+                    <td> <a th:href="@{/categoria/actualiza/} + ${categoria.id_categoria}">Actualizar</td>
+                    <td> <a th:href="@{/categoria/eliminar/} + ${categoria.id_categoria}">Eliminar</td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+
+    </body>
+</html>
