@@ -5,6 +5,7 @@
 package com.example.demo.Dao;
 
 import com.example.demo.dominio.Cliente;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 
@@ -14,7 +15,8 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
  */
 public interface ClienteDao extends JpaRepository<Cliente, Long>
 {
-
+ public List<Cliente> findByApellidos (String apellidos);
+    
     
     
 }

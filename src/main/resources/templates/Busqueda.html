@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      >
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        
+        <div>TechShop</div>
+        <a th:href="@{/}">Regresar</a>
+        <hr/>
+        <form th:action="@{/cliente/buscar}"
+              method="post"
+              th:object="${cliente}"
+              >            
+ 
+            <fieldset>
+            <label for="activo">Apellidos:</label>
+            <input type="text" name="apellidos" th:field="*{apellidos}">
+            </fieldset>     
+                
+              <input type="submit" name="guardar" value="guardar">     
+                
+            
+        </form>
+        
+     
+    </body>
+</html>
