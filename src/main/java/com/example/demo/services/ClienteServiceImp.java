@@ -27,10 +27,10 @@ public  class ClienteServiceImp implements ClienteService{
         return (List<Cliente>)clienteDao.findAll();
     }
 
-     @Override
+    @Override
     @Transactional(readOnly =true)
-    public List<Cliente> getClientesPorApellidos(String apellidos) {
-        return (List<Cliente>)clienteDao.findByApellidos(apellidos);
+    public Cliente getClientesPorApellidos(Cliente cliente) {
+        return clienteDao.findByApellidos(cliente.getApellidos());
     }
     
     

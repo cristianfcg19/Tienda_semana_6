@@ -13,11 +13,14 @@ import java.util.List;
  * @author Christian
  */
 
-public  interface ClienteService {
+public  interface ClienteService  {
+    
+    
+    
 //CRUD = Create Read Update Delete
 public List <Cliente> getClientes();
 
-public List <Cliente> getClientesPorApellidos(String apellidos);
+public Cliente getClientesPorApellidos(Cliente cliente);
 
 public Cliente  getCliente(Cliente cliente);
 

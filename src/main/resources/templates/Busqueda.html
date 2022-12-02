@@ -12,7 +12,7 @@
         <div>TechShop</div>
         <a th:href="@{/}">Regresar</a>
         <hr/>
-        <form th:action="@{/cliente/buscar}"
+        <form th:action="@{/cliente/Buscar/}+${cliente.apellidos}"
               method="post"
               th:object="${cliente}"
               >            

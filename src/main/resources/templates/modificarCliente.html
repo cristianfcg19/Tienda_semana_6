@@ -13,11 +13,15 @@
         
         <div>TechShop</div>
         <a th:href="@{/}">Regresar</a>
-        <hr/>
+
         <form th:action="@{/cliente/guardar}"
               method="post"
               th:object="${cliente}"
               >
+            
+             <input type="hidden" name="id_articulo" th:field="*{idCliente}"> 
+            
+            
             <fieldset>
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" th:field="*{nombre}">
@@ -38,8 +42,7 @@
             
             <input type="tel" name="telefono" th:field="*{telefono}">
             </fieldset>    
-            
-            <hr/>
+       
                 
             <input type="submit" name="guardar" value="guardar">    
         </form>

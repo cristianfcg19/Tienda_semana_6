@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
  */
 public interface ClienteDao extends JpaRepository<Cliente, Long>
 {
- public List<Cliente> findByApellidos (String apellidos);
+ public Cliente findByApellidos(String apellidos);
     
     
     
